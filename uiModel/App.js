@@ -4,6 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, ScrollView, Pressable, FlatList } from 'react-native';
 
 
+
 export default function LoginScreen() {
   const [query, setQuery] = useState('');
   const [txt, setTxt] = useState('');
@@ -41,6 +42,25 @@ export default function LoginScreen() {
         placeholder="  Email"
       />
       </View>
+      <Pressable style={styles.button}>
+       
+        <Text style={styles.text}>
+          Log in</Text>
+      </Pressable>
+      <Text style={styles.orContinue}>
+            Or continue with
+            </Text>
+      <View style={styles.group57Container}>
+          <Image source={require('./assets/Group 57.jpg')} />
+        </View>
+        <View>
+          <Text style={styles.Textalign}>
+            Don't have an account? <Text style={{color:'blue', textDecorationLine:'underline'}}>
+              Register
+            </Text>
+            </Text>
+        </View>
+        <StatusBar style="auto" />
         </View>
         </ScrollView>
         );
@@ -52,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    top:-100,
+    top:-70,
    
   },
   container2: {
@@ -95,4 +115,58 @@ const styles = StyleSheet.create({
     fontSize: 14,
     left:10,
   },
-})
+  searchContainer: {
+    backgroundColor: '#fff',
+    padding: 10,
+    margin: 10,
+    borderRadius: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 350,
+    height: 60,
+    top:250,
+    borderWidth: 1,
+    borderColor: 'ash',
+    borderRadius:20,
+    left:10,
+    flex: 1,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    left: 10,
+  },
+  secondsearchInput: {
+    flex: 1,
+    fontSize: 14,
+    left:10,
+  },
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:20,
+    borderRadius: 15,
+    elevation: 3,
+    backgroundColor: '#356899',
+    top: 250,
+    width:350,
+    left: 20,
+    marginVertical: 20
+  },
+  group57Container: {
+    top: 300,
+    alignItems: 'center',
+  },
+  Textalign: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    top:310
+  },
+  orContinue: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    top: 295
+  }
+});
