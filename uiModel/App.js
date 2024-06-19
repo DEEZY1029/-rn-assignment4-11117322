@@ -5,7 +5,15 @@ import { StyleSheet, Text, View, Image, TextInput, ScrollView, Pressable, FlatLi
 
 
 export default function LoginScreen() {
-
+  const [query, setQuery] = useState('');
+  const [txt, setTxt] = useState('');
+ 
+  const handleSearch = text => {
+    setQuery(text);
+  };
+  const searchHandle = text => {
+    setTxt(text);
+  };
   return (
     
     
@@ -17,6 +25,22 @@ export default function LoginScreen() {
         <View style={styles.group46Container}>
           <Image source={require('./assets/Group 46.jpg')} />
         </View>
+        <View style={styles.searchContainer}>
+      <TextInput
+        style={styles.searchInput}
+        value={query}
+        onChangeText={handleSearch}
+        placeholder=" Name"
+      />
+      </View>
+      <View style={styles.searchContainer}>
+      <TextInput
+        style={styles.secondsearchInput}
+        value={txt}
+        onChangeText={searchHandle}
+        placeholder="  Email"
+      />
+      </View>
         </View>
         </ScrollView>
         );
@@ -44,5 +68,31 @@ const styles = StyleSheet.create({
     top: 230,
     alignItems: 'flex-start',
    left: 25,
+  },
+  searchContainer: {
+    backgroundColor: '#fff',
+    padding: 10,
+    margin: 10,
+    borderRadius: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: 350,
+    height: 60,
+    top:250,
+    borderWidth: 1,
+    borderColor: 'ash',
+    borderRadius:20,
+    left:10,
+    flex: 1,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 14,
+    left: 10,
+  },
+  secondsearchInput: {
+    flex: 1,
+    fontSize: 14,
+    left:10,
   },
 })
